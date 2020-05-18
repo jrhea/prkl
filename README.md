@@ -1,5 +1,5 @@
 # prkl
-eth2 network agent
+eth2 network monitoring
 
 ## Links
 
