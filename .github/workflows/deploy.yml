@@ -26,7 +26,7 @@ jobs:
         architecture: 'x64'
     - name: Install JupyterLab
       run: pip install jupyterlab
-    - name: Generate markdown
+    - name: Generate html 
       run: jupyter nbconvert analysis/testnet-analysis.ipynb --TemplateExporter.exclude_input=True --to html && mkdir -p public && mv analysis/testnet-analysis.html public/
     - name: Deploy to GitHub Pages
       if: success()
