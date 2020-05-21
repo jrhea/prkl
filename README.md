@@ -2,6 +2,6 @@
 eth2 network monitoring
 
 ## Links
-
-- Eth2 Network Agent: [imp](https://github.com/prrkl/imp)
-- Libp2p for Dummies: [mothra](https://github.com/prrkl/mothra)
+- [Topaz Analysis](https://txrx-research.github.io/prkl/testnet-analysis.html)
+- [imp: Eth2 Network Agent](https://github.com/prrkl/imp)
+- [mothra: Libp2p for Dummies](https://github.com/prrkl/mothra)
