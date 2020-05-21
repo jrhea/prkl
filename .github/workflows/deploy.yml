@@ -25,7 +25,7 @@ jobs:
         python-version: '3.x'
         architecture: 'x64'
     - name: Install JupyterLab and Extensions
-      run: pip install jupyterlab && pip install -e jupyter_contrib_nbextensions && jupyter contrib nbextension install --user
+      run: pip install jupyterlab && pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install --user
     - name: Enable Jupyter Extensions
       run: jupyter nbextension enable python-markdown/main
     - name: Generate html 
