@@ -31,11 +31,8 @@ jobs:
     - name: Generate html 
       run: jupyter nbconvert analysis/testnet-analysis.ipynb --TemplateExporter.exclude_input=True --to html && mkdir -p public && mv analysis/testnet-analysis.html public/
     - name: Deploy to GitHub Pages
-      if: success()
-      uses: crazy-max/ghaction-github-pages@v2
+      uses: peaceiris/actions-gh-pages@v3.6.1
       with:
-        target_branch: gh-pages
-        build_dir: public
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        publish_dir: ./public
 
