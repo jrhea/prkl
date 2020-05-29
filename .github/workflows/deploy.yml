@@ -24,8 +24,12 @@ jobs:
       with:
         python-version: '3.x'
         architecture: 'x64'
-    - name: Install JupyterLab, Papermill and Extensions
-      run: pip install jupyterlab && pip install papermill && pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install --user
+    - uses: goanpeca/setup-miniconda@v1.5.0
+      with:
+        miniconda-version: "latest"
+        activate-environment: foo
+    - name: Install Packages and Extensions
+      run:  conda install pip && pip install -r analysis/requirements.txt && jupyter contrib nbextension install --user
     - name: Enable Jupyter Extensions
       run: jupyter nbextension enable python-markdown/main
     - name: Generate topaz html 
