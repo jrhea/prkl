@@ -22,16 +22,18 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.7.7'
         architecture: 'x64'
-    - name: Install JupyterLab, Papermill and Extensions
-      run: pip install jupyterlab && pip install papermill && pip install jupyter_contrib_nbextensions && jupyter contrib nbextension install --user
+    - name: Install Matplotlib and Basemap
+      run: pip install --upgrade --user matplotlib numpy pyproj pyshp OWSLib Pillow && sudo apt install libgeos-dev && sudo apt-get update && sudo apt install libgeos-dev && pip install --user https://github.com/matplotlib/basemap/archive/master.zip
+    - name: Install Other Packages and Extensions
+      run:  pip install jupyterlab jupyter_contrib_nbextensions papermill numpy pandas ipynb ipinfo && jupyter contrib nbextension install --user
     - name: Enable Jupyter Extensions
       run: jupyter nbextension enable python-markdown/main
     - name: Generate topaz html 
-      run: cat analysis/testnet-analysis.ipynb | papermill -p NETWORK "topaz" -p FORK_DIGEST "f071c66c" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output topaz-analysis.html
+      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "topaz" -p FORK_DIGEST "f071c66c" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../topaz-analysis.html && cd ..
     - name: Generate witti html
-      run: cat analysis/testnet-analysis.ipynb | papermill -p NETWORK "witti" -p FORK_DIGEST "f6775d07" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output witti-analysis.html 
+      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "witti" -p FORK_DIGEST "f6775d07" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../witti-analysis.html && cd ..
     - name: Move files
       run: mkdir -p public && mv *.html public/ && cp README.md public/index.md
     - name: Deploy to GitHub Pages
