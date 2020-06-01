@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered celltag_papermill-error-cell-tag"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">An Exception was encountered at '<a href="#papermill-error-cell">In [4]</a>'.</span></p>
+<p><span style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">An Exception was encountered at '<a href="#papermill-error-cell">In [5]</a>'.</span></p>
 
 </div>
 </div>
@@ -13089,6 +13089,9 @@ div#notebook {
 
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_injected-parameters">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing text_cell rendered celltag_papermill-error-cell-tag"><div class="prompt input_prompt">
@@ -13113,51 +13116,20 @@ div#notebook {
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-4-59023a62e5eb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># load vars from data.ipynb</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> ipynb<span class="ansi-blue-fg">.</span>fs<span class="ansi-blue-fg">.</span>full<span class="ansi-blue-fg">.</span>data <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> 
-<span class="ansi-green-intense-fg ansi-bold">      4</span> df_all_with_dups <span class="ansi-blue-fg">=</span> df_all_with_dups_witti
-<span class="ansi-green-intense-fg ansi-bold">      5</span> df_all <span class="ansi-blue-fg">=</span> df_all_witti
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-3f64fbccae77&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">#%%capture</span>
+<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">import</span> ipinfo
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">import</span> pickle
+<span class="ansi-green-intense-fg ansi-bold">      4</span> 
+<span class="ansi-green-intense-fg ansi-bold">      5</span> 
 
-<span class="ansi-green-fg">~/work/prkl/prkl/analysis/data.ipynb</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     31</span>     <span class="ansi-blue-fg">&#34;        df = pd.read_csv(file) \n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     32</span>     <span class="ansi-blue-fg">&#34;        df.drop(columns=[&#39;index&#39;])\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 33</span><span class="ansi-red-fg">     </span><span class="ansi-blue-fg">&#34;        dfs.append(df)\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     34</span>     <span class="ansi-blue-fg">&#34;\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     35</span>     <span class="ansi-blue-fg">&#34;    df_all_with_dups = pd.concat(dfs).reset_index(drop=True).sort_values(by=[&#39;seq_no&#39;], ascending=False) #ensure we keep highest seq no\n&#34;</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">~/work/prkl/prkl/analysis/data.ipynb</span> in <span class="ansi-cyan-fg">load_data</span><span class="ansi-blue-fg">(network, fork_digest)</span>
-<span class="ansi-green-intense-fg ansi-bold">     23</span>     <span class="ansi-blue-fg">&#34;    dfs = []\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     24</span>     <span class="ansi-blue-fg">&#34;    start = 12000\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">---&gt; 25</span><span class="ansi-red-fg">     </span><span class="ansi-blue-fg">&#34;    path = str(Path.home())+\&#34;/.{}/\&#34;.format(network)\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     26</span>     <span class="ansi-blue-fg">&#34;    pattern = \&#34;{}{}\&#34;.format(path,\&#34;crawler*\&#34;)\n&#34;</span><span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">     27</span>     <span class="ansi-blue-fg">&#34;    numFiles = len(glob.glob(pattern)) #!ls -l ~/.$network/crawler* |wc -l\n&#34;</span><span class="ansi-blue-fg">,</span>
-
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.7/x64/lib/python3.7/site-packages/pandas/core/reshape/concat.py</span> in <span class="ansi-cyan-fg">concat</span><span class="ansi-blue-fg">(objs, axis, join, ignore_index, keys, levels, names, verify_integrity, sort, copy)</span>
-<span class="ansi-green-intense-fg ansi-bold">    279</span>         verify_integrity<span class="ansi-blue-fg">=</span>verify_integrity<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    280</span>         copy<span class="ansi-blue-fg">=</span>copy<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-fg">--&gt; 281</span><span class="ansi-red-fg">         </span>sort<span class="ansi-blue-fg">=</span>sort<span class="ansi-blue-fg">,</span>
-<span class="ansi-green-intense-fg ansi-bold">    282</span>     )
-<span class="ansi-green-intense-fg ansi-bold">    283</span> 
-
-<span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.7.7/x64/lib/python3.7/site-packages/pandas/core/reshape/concat.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, objs, axis, join, keys, levels, names, ignore_index, verify_integrity, copy, sort)</span>
-<span class="ansi-green-intense-fg ansi-bold">    327</span> 
-<span class="ansi-green-intense-fg ansi-bold">    328</span>         <span class="ansi-green-fg">if</span> len<span class="ansi-blue-fg">(</span>objs<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 329</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> ValueError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;No objects to concatenate&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    330</span> 
-<span class="ansi-green-intense-fg ansi-bold">    331</span>         <span class="ansi-green-fg">if</span> keys <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-red-fg">ValueError</span>: No objects to concatenate</pre>
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;ipinfo&#39;</pre>
 </div>
 </div>
 
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
