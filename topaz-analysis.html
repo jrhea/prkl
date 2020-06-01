@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered celltag_papermill-error-cell-tag"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><span style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">An Exception was encountered at '<a href="#papermill-error-cell">In [7]</a>'.</span></p>
+<p><span style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">An Exception was encountered at '<a href="#papermill-error-cell">In [4]</a>'.</span></p>
 
 </div>
 </div>
@@ -13090,6 +13090,14 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered celltag_injected-parameters">
 
+</div>
+<div class="cell border-box-sizing text_cell rendered celltag_papermill-error-cell-tag"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><span id="papermill-error-cell" style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">Execution using papermill encountered an exception here and stopped:</span></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
@@ -13106,12 +13114,12 @@ div#notebook {
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-4-019582026ac0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-4-59023a62e5eb&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg"># load vars from data.ipynb</span>
 <span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> ipynb<span class="ansi-blue-fg">.</span>fs<span class="ansi-blue-fg">.</span>full<span class="ansi-blue-fg">.</span>data <span class="ansi-green-fg">import</span> <span class="ansi-blue-fg">*</span>
 <span class="ansi-green-intense-fg ansi-bold">      3</span> 
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">if</span> NETWORK <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">&#34;topaz&#34;</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     df_all_with_dups <span class="ansi-blue-fg">=</span> df_all_with_dups_topaz
+<span class="ansi-green-intense-fg ansi-bold">      4</span> df_all_with_dups <span class="ansi-blue-fg">=</span> df_all_with_dups_witti
+<span class="ansi-green-intense-fg ansi-bold">      5</span> df_all <span class="ansi-blue-fg">=</span> df_all_witti
 
 <span class="ansi-green-fg">~/work/prkl/prkl/analysis/data.ipynb</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-intense-fg ansi-bold">     31</span>     <span class="ansi-blue-fg">&#34;        df = pd.read_csv(file) \n&#34;</span><span class="ansi-blue-fg">,</span>
@@ -13151,127 +13159,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-5-062edcae92df&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>ips <span class="ansi-blue-fg">=</span> df<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;ip4&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>to_list<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> 
-<span class="ansi-green-intense-fg ansi-bold">      3</span> ips_info<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">}</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">for</span> ip <span class="ansi-green-fg">in</span> ips<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     ips_info<span class="ansi-blue-fg">[</span>ip<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">=</span>saved_ips_info<span class="ansi-blue-fg">[</span>ip<span class="ansi-blue-fg">]</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;df&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h1 id="A-(DHT)-Crawl-Through-The-Topaz-Testnet-&#128375;">A (DHT) Crawl Through The Topaz Testnet &#128375;<a class="anchor-link" href="#A-(DHT)-Crawl-Through-The-Topaz-Testnet-&#128375;">&#182;</a></h1>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h4 id="by-Jonny-Rhea-of-TXRX-Research">by <a href="https://twitter.com/JonnyRhea">Jonny Rhea</a> of <a href="https://twitter.com/TXRXResearch">TXRX Research</a><a class="anchor-link" href="#by-Jonny-Rhea-of-TXRX-Research">&#182;</a></h4>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered celltag_papermill-error-cell-tag"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><span id="papermill-error-cell" style="color:red; font-family:Helvetica Neue, Helvetica, Arial, sans-serif; font-size:2em;">Execution using papermill encountered an exception here and stopped:</span></p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_markdown rendered_html output_subarea ">
-<h3 id="&#128376;-Crawl-Summary-&#128376;">&#128376; Crawl Summary &#128376;<a class="anchor-link" href="#&#128376;-Crawl-Summary-&#128376;">&#182;</a></h3>
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-
-<div class="output_markdown rendered_html output_subarea ">
-
-</div>
-
-</div>
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-9a9775485d92&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> display<span class="ansi-blue-fg">(</span>md<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;### 🕸 Crawl Summary 🕸&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> display<span class="ansi-blue-fg">(</span>md<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;\n&#34;</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg"> </span>display<span class="ansi-blue-fg">(</span>md<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;- **Total number of nodes found:** {}&#34;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>tot_num_nodes<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> display<span class="ansi-blue-fg">(</span>md<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;- **Number of nodes on {}:** {}&#34;</span><span class="ansi-blue-fg">.</span>format<span class="ansi-blue-fg">(</span>NETWORK<span class="ansi-blue-fg">.</span>title<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> num_nodes<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;tot_num_nodes&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
