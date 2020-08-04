@@ -6,6 +6,7 @@
 - [Topaz](https://txrx-research.github.io/prkl/topaz-analysis.html)
 - [Witti](https://txrx-research.github.io/prkl/witti-analysis.html)
 - [Altona](https://txrx-research.github.io/prkl/altona-analysis.html)
+- [Medalla](https://txrx-research.github.io/prkl/medalla-analysis.html)
 
 ### 👾 Code
 - [imp: Eth2 Network Agent](https://github.com/prrkl/imp)
