@@ -30,10 +30,8 @@ jobs:
       run:  pip install jupyterlab jupyter_contrib_nbextensions papermill numpy pandas ipynb ipinfo && jupyter contrib nbextension install --user
     - name: Enable Jupyter Extensions
       run: jupyter nbextension enable python-markdown/main
-    - name: Generate topaz html 
-      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "topaz" -p FORK_DIGEST "f071c66c" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../topaz-analysis.html && cd ..
-    - name: Generate witti html
-      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "witti" -p FORK_DIGEST "f6775d07" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../witti-analysis.html && cd ..
+    - name: Generate altona html
+      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "altona" -p FORK_DIGEST "fdca39b0" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../altona-analysis.html && cd ..
     - name: Move files
       run: mkdir -p public && mv *.html public/ && cp README.md public/index.md
     - name: Deploy to GitHub Pages
