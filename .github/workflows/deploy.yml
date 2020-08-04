@@ -30,8 +30,8 @@ jobs:
       run:  pip install jupyterlab jupyter_contrib_nbextensions papermill numpy pandas ipynb ipinfo && jupyter contrib nbextension install --user
     - name: Enable Jupyter Extensions
       run: jupyter nbextension enable python-markdown/main
-    - name: Generate altona html
-      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "altona" -p FORK_DIGEST "fdca39b0" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../altona-analysis.html && cd ..
+    - name: Generate medalla html
+      run: cd analysis && cat testnet-analysis.ipynb | papermill -p LOAD_SESSION True -p NETWORK "medalla" -p FORK_DIGEST "e7a75d5a" | jupyter nbconvert --stdin --TemplateExporter.exclude_input=True --to html --output ../medalla-analysis.html && cd ..
     - name: Move files
       run: mkdir -p public && mv *.html public/ && cp README.md public/index.md
     - name: Deploy to GitHub Pages
